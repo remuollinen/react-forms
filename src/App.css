@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
 body {
 	background-color: beige;
 }
@@ -36,7 +38,7 @@ form {
 .inputs input,
 textarea,
 select,
-button {
+#submit {
 	min-width: 15vw;
 	margin: 1rem;
 	padding: 0.5rem;
@@ -44,7 +46,7 @@ button {
 	border-style: none;
 }
 
-button {
+#submit {
 	width: 88%;
 	margin-left: 1rem;
 	padding: 0.5rem;
@@ -53,6 +55,12 @@ button {
 	background-color: rgb(34, 138, 34);
 	color: white;
 	font-weight: 600;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+#submit:hover {
+	background-color: rgb(84, 168, 84);
 }
 
 .View {
@@ -77,11 +85,58 @@ button {
 	margin: 0;
 }
 
-.View p span {
+span {
 	margin: 0 3rem;
-	font-style: italic;
+	font-weight: 600;
+	font-size: 1.5rem;
+	font-family: "Caveat", cursive;
 }
 
 .Popup {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	display: none;
+}
+
+.active {
+	display: flex;
+}
+
+.popup-wrapper {
+	width: 30%;
+	background-color: white;
+	border: 1px solid #222;
+	border-radius: 5px;
+	padding: 2rem;
+}
+
+.popup-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+#close-btn {
+	margin: 0 1rem;
+	padding: 0 1rem;
+	border: none;
+	border-radius: 5px;
+	background-color: rgb(253, 80, 80);
+	cursor: pointer;
+	font-weight: 600;
+	transition: 0.2s ease-in-out;
+}
+
+#close-btn:hover {
+	background-color: rgb(255, 153, 153);
+}
+
+.popup-content {
+	margin-top: 3rem;
 }

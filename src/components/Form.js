@@ -1,6 +1,6 @@
 function Form(props) {
 	return (
-		<form>
+		<form onSubmit={props.showPopupHandler}>
 			<div className="labels">
 				<label>Firstname</label>
 				<label>Lastname</label>
@@ -39,7 +39,9 @@ function Form(props) {
 					<option value="teacher">Teacher</option>
 					<option value="other">Other</option>
 				</select>
-				<button type="submit">SEND</button>
+				<button type="submit" id="submit">
+					SEND
+				</button>
 			</div>
 		</form>
 	);

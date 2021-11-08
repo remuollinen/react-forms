@@ -20,10 +20,20 @@ class App extends Component {
 		});
 	};
 
+	showPopupHandler = (event) => {
+		event.preventDefault();
+		this.setState({
+			showPopup: true,
+		});
+	};
+
 	render() {
 		return (
 			<div className="App">
-				<Form inputHandler={this.inputHandler} />
+				<Form
+					inputHandler={this.inputHandler}
+					showPopupHandler={this.showPopupHandler}
+				/>
 				<View
 					firstname={this.state.firstname}
 					lastname={this.state.lastname}
@@ -31,12 +41,18 @@ class App extends Component {
 					message={this.state.message}
 					role={this.state.role}
 				/>
-				<Popup showPopup={this.showPopup} />
+				<Popup
+					showPopup={this.state.showPopup}
+					showPopupHandler={this.showPopupHandler}
+					firstname={this.state.firstname}
+					lastname={this.state.lastname}
+					number={this.state.number}
+					message={this.state.message}
+					role={this.state.role}
+				/>
 			</div>
 		);
 	}
 }
 
 export default App;
-
-// come back 1245
