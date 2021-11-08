@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Form from "./components/Form";
+import Popup from "./components/Popup";
+import View from "./components/View";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+	state = {
+		firstname: "",
+		lastname: "",
+		number: "",
+		message: "",
+		role: "",
+		showPopup: false,
+	};
+
+	inputHandler = (event) => {
+		this.setState({
+			[event.target.name]: event.target.value,
+		});
+	};
+
+	render() {
+		return (
+			<div className="App">
+				<Form inputHandler={this.inputHandler} />
+				<View
+					firstname={this.state.firstname}
+					lastname={this.state.lastname}
+					number={this.state.number}
+					message={this.state.message}
+					role={this.state.role}
+				/>
+				<Popup showPopup={this.showPopup} />
+			</div>
+		);
+	}
 }
 
 export default App;
+
+// come back 1245

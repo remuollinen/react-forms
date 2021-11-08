@@ -1,38 +1,87 @@
+body {
+	background-color: beige;
+}
+
 .App {
-  text-align: center;
+	height: 100vh;
+	display: flex;
+	align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+	display: flex;
+	background-color: rgb(23, 85, 136);
+	padding: 1rem;
+	margin: 1rem;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #222;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.labels,
+.inputs {
+	display: flex;
+	flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.labels label {
+	margin: 1rem 1rem;
+	padding: 0.3rem;
+	color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.labels label:last-child {
+	margin-top: 4.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputs input,
+textarea,
+select,
+button {
+	min-width: 15vw;
+	margin: 1rem;
+	padding: 0.5rem;
+	border-radius: 5px;
+	border-style: none;
+}
+
+button {
+	width: 88%;
+	margin-left: 1rem;
+	padding: 0.5rem;
+	border-radius: 5px;
+	border-style: none;
+	background-color: rgb(34, 138, 34);
+	color: white;
+	font-weight: 600;
+}
+
+.View {
+	background-color: white;
+	width: 100%;
+	margin: 1rem;
+	padding: 2rem;
+	border-radius: 5px;
+	border: 1px solid #222;
+	box-shadow: 0 0 5px #222;
+}
+
+.View h2 {
+	margin-bottom: 2rem;
+	display: block;
+	text-align: center;
+}
+
+.View p {
+	border-bottom: 1px solid rgb(255, 132, 132);
+	padding: 1rem;
+	margin: 0;
+}
+
+.View p span {
+	margin: 0 3rem;
+	font-style: italic;
+}
+
+.Popup {
+	display: none;
 }
