@@ -27,6 +27,12 @@ class App extends Component {
 		});
 	};
 
+	closePopupHandler = () => {
+		this.setState({
+			showPopup: false,
+		});
+	};
+
 	render() {
 		return (
 			<div className="App">
@@ -44,6 +50,7 @@ class App extends Component {
 				<Popup
 					showPopup={this.state.showPopup}
 					showPopupHandler={this.showPopupHandler}
+					closePopupHandler={this.closePopupHandler}
 					firstname={this.state.firstname}
 					lastname={this.state.lastname}
 					number={this.state.number}

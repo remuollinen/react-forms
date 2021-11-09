@@ -4,12 +4,7 @@ const Popup = (props) => {
 	return (
 		<div className={props.showPopup ? "Popup active" : "Popup"}>
 			<div className="popup-wrapper">
-				<div className="popup-header">
-					<h3>Your inputs</h3>
-					<button id="close-btn" onClick={() => window.location.reload()}>
-						Close
-					</button>
-				</div>
+				<h2>Your note</h2>
 				<div className="popup-content">
 					<p>
 						Firstname: <span>{props.firstname}</span>
@@ -26,6 +21,12 @@ const Popup = (props) => {
 					<p>
 						Role: <span>{props.role}</span>
 					</p>
+				</div>
+				<div className="buttons">
+					<button onClick={() => window.location.reload()}>Yes I'm sure</button>
+					<button onClick={props.closePopupHandler}>
+						No I don't want to post it
+					</button>
 				</div>
 			</div>
 		</div>

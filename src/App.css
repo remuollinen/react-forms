@@ -38,7 +38,7 @@ form {
 .inputs input,
 textarea,
 select,
-#submit {
+button {
 	min-width: 15vw;
 	margin: 1rem;
 	padding: 0.5rem;
@@ -46,7 +46,7 @@ select,
 	border-style: none;
 }
 
-#submit {
+button {
 	width: 88%;
 	margin-left: 1rem;
 	padding: 0.5rem;
@@ -59,7 +59,7 @@ select,
 	transition: 0.2s ease-in-out;
 }
 
-#submit:hover {
+button:hover {
 	background-color: rgb(84, 168, 84);
 }
 
@@ -74,19 +74,34 @@ select,
 }
 
 .View h2 {
-	margin-bottom: 2rem;
+	margin-bottom: 5rem;
 	display: block;
 	text-align: center;
 }
 
-.View p {
-	border-bottom: 1px solid rgb(255, 132, 132);
-	padding: 1rem;
-	margin: 0;
+.notebook div {
+	display: flex;
+	background-color: rgb(240, 240, 240);
+}
+
+.notebook div .line {
+	border: 1px solid #222;
+	border-right: 1px solid red;
+	width: 40px;
+	margin: -1px 1px 0 0;
+}
+
+.notebook div p {
+	border: 1px solid #222;
+	border-left: 1px solid red;
+	padding: 0.5rem;
+	margin: -1px 0 0 0;
+	width: 100%;
+	font-weight: 500;
 }
 
 span {
-	margin: 0 3rem;
+	margin: 0 2rem;
 	font-weight: 600;
 	font-size: 1.5rem;
 	font-family: "Caveat", cursive;
@@ -110,33 +125,31 @@ span {
 }
 
 .popup-wrapper {
-	width: 30%;
+	width: 40%;
 	background-color: white;
 	border: 1px solid #222;
 	border-radius: 5px;
 	padding: 2rem;
 }
 
-.popup-header {
+.popup-content {
+	margin: 3rem 1rem;
+}
+
+.buttons {
 	display: flex;
 	justify-content: space-between;
 }
 
-#close-btn {
-	margin: 0 1rem;
-	padding: 0 1rem;
-	border: none;
-	border-radius: 5px;
-	background-color: rgb(253, 80, 80);
-	cursor: pointer;
-	font-weight: 600;
-	transition: 0.2s ease-in-out;
+.buttons button {
+	padding: 0.7rem;
+	text-transform: uppercase;
 }
 
-#close-btn:hover {
-	background-color: rgb(255, 153, 153);
+.buttons button:last-child {
+	background-color: rgb(146, 146, 146);
 }
 
-.popup-content {
-	margin-top: 3rem;
+.buttons button:last-child:hover {
+	background-color: rgb(180, 180, 180);
 }
