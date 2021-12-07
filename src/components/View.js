@@ -1,7 +1,6 @@
 function View(props) {
 	return (
 		<div className="View">
-			<h2>Here are your inputs</h2>
 			<div className="notebook">
 				<div>
 					<span className="line"></span>

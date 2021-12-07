@@ -1,0 +1,28 @@
+{
+	"notes": [
+		{
+			"id": 1,
+			"firstname": "test",
+			"lastname": "person",
+			"number": "1234567890",
+			"role": "student",
+			"message": "Hello World!"
+		},
+		{
+			"id": 2,
+			"firstname": "Matt",
+			"lastname": "River",
+			"number": "124058305823",
+			"role": "teacher",
+			"message": "JSON Server rocks!"
+		},
+		{
+			"id": 3,
+			"firstname": "cool",
+			"lastname": "cat",
+			"number": "502385835",
+			"role": "other",
+			"message": "Hello to some other world!"
+		}
+	]
+}
