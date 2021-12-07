@@ -142,6 +142,16 @@ span {
 	background-color: rgb(180, 180, 180);
 }
 
+.Notes p {
+	margin: 0.3rem 0;
+}
+
+.Notes p span {
+	font-family: unset;
+	font-size: 1rem;
+	margin: 0 0.5rem;
+}
+
 .result-area {
 	display: flex;
 	flex-direction: column;

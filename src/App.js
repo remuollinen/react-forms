@@ -8,11 +8,13 @@ import axios from "axios";
 
 class App extends Component {
 	state = {
-		firstname: "",
-		lastname: "",
-		number: "",
-		message: "",
-		role: "",
+		inputData: {
+			firstname: "",
+			lastname: "",
+			number: "",
+			message: "",
+			role: "",
+		},
 		showPopup: false,
 		data: [],
 	};
@@ -25,7 +27,10 @@ class App extends Component {
 
 	inputHandler = (event) => {
 		this.setState({
-			[event.target.name]: event.target.value,
+			inputData: {
+				...this.state.inputData,
+				[event.target.name]: event.target.value,
+			},
 		});
 	};
 
@@ -42,15 +47,18 @@ class App extends Component {
 		});
 	};
 
-	render() {
-		const props = {
-			firstname: this.state.firstname,
-			lastname: this.state.lastname,
-			number: this.state.number,
-			message: this.state.message,
-			role: this.state.role,
-		};
+	postHandler = () => {
+		axios
+			.post("http://localhost:3001/notes", this.state.inputData)
+			.then((res) => {
+				console.log(res);
+				this.setState({ showPopup: false });
+				window.location.reload();
+			})
+			.catch((err) => console.log(err));
+	};
 
+	render() {
 		return (
 			<div className="App">
 				<Form
@@ -58,17 +66,17 @@ class App extends Component {
 					showPopupHandler={this.showPopupHandler}
 				/>
 				<div className="result-area">
-					<View {...props} />
+					<View {...this.state.inputData} />
 					{this.state.data.map((note) => (
-						<Notes {...note} />
+						<Notes key={note.id} {...note} />
 					))}
 				</div>
 				{this.state.showPopup && (
 					<Popup
+						{...this.state.inputData}
 						showPopup={this.state.showPopup}
-						showPopupHandler={this.showPopupHandler}
 						closePopupHandler={this.closePopupHandler}
-						{...props}
+						post={this.postHandler}
 					/>
 				)}
 			</div>
