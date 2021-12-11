@@ -1,6 +1,6 @@
 # Forms App
 
-- An independent task done with React @ Business College Helsinki - React course
+- A forms exercise done with React @ Business College Helsinki - React course
 
 ## Description
 
@@ -14,12 +14,13 @@
   - using onChange
 - Has a popup window when form is submitted
   - Shows the data user has inputted
+- JSON server also used to store notes
 
 ## Screenshots
 
 ### Screenshot of Forms App
 
-![screenshot of app](screenshot-app.png)
+![screenshot of app](screenshot.png)
 
 ### Screenshot of pop up window
 
